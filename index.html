@@ -5,36 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Matematika</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script>
 </head>
 <body>
     <div class="header">
         <b>KATIK</b> Kalkulator Matematika
     </div>
     <div class="container">
-        <h2 class="title">
-            Welcome to KATIK
-        </h2>
-        <p>Hai Sahabat, Selamat datang di KATIK<br>
-            Sebuah Web sederhana yang berfungsi untuk menghitung nilai luas dan keliling Persegi
+        <h2 class="title">Welcome to KATIK</h2>
+        <p class="center-text">Hai Kawan, Selamat datang di KATIK<br>
+            Sebuah kalkulator matematika sederhana yang dapat membantu anda dalam menghitung nilai luas dan keliling
         </p>
-        <button class="btn">Persegi</button>
-        <button class="btn">P. Panjang</button>
+        <button class="btn" onclick="tampilkanform('persegi')">Persegi</button>
+        <button class="btn" onclick="tampilkanform('persegipanjang')">Persegi Panjang</button>
 
-        <h3 class="title">Luas Persegi</h3>
-        <img src="./asset/persegi.jpg" alt="Persegi" width="500" height="333">
+        <div id="form-persegi" class="form-container">
+            <h3 class="title">Luas Persegi</h3>
+            <img src="./asset/persegi.jpg" alt="Persegi" width="70" class="img">
+            <p>Rumus Luas Persegi: <b>L = S x S</b></p>
+            <input type="number" id="sisi" placeholder="Nilai Sisi">
+            <button class="btn" onclick="hitungLuasPersegi()">Hitung</button>
+            <button class="btn btn-reset" onclick="resetForm('persegi')">Reset</button>
+            <p id="hasil-luas-persegi"></p>
+        </div>
 
-        <p>Rumus Luas Persegi Yaitu:</p>
-        <p><b>L = S X S</b></p>
-        <p>Di mana : <br>
-        L = Luas <br>
-        S = Sisi </p>
-        <h4>Hitung Luas Persegi</h4>
-        <input type="number" id="sisi" placeholder="Nilai Sisi">
-        <button class="btn" onclick="hitungluas()">HItung</button>
-        <button cllas="btn btn-reset" onclick="resetInput()">Reset</button>
+        <div id="form-persegipanjang" class="form-container" style="display: none;">
+            <h3 class="title">Luas Persegi Panjang</h3>
+            <img src="./asset/persegipanjang.jpg" alt="Persegi Panjang" width="70" class="img">
+            <p>Rumus Luas Persegi Panjang: <b>L = P x L</b></p>
+            <input type="number" id="panjang" placeholder="Nilai Panjang">
+            <input type="number" id="lebar" placeholder="Nilai Lebar">
+            <button class="btn" onclick="hitungLuasPersegiPanjang()">Hitung</button>
+            <button class="btn btn-reset" onclick="resetForm('persegipanjang')">Reset</button>
+            <p id="hasil-luas-persegi-panjang"></p>
+        </div>
     </div>
-
-    <script src="./js/script.js"></script>  
 </body>
 </html>

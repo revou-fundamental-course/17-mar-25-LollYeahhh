@@ -1,8 +1,13 @@
 body {
     font-family: sans-serif;
+    font-variant: bold;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+}
+
+.center-text {
+    text-align: center;
 }
 
 .header {
@@ -11,4 +16,48 @@ body {
     text-align: center;
     padding: 15px;
     font-size: 24px;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-reset {
+    background-color: orange;
+}
+
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
