@@ -19,25 +19,65 @@
         <button class="btn" onclick="tampilkanform('persegi')">Persegi</button>
         <button class="btn" onclick="tampilkanform('persegipanjang')">Persegi Panjang</button>
 
+        <!--form persegi-->
         <div id="form-persegi" class="form-container">
-            <h3 class="title">Luas Persegi</h3>
+            <h3 class="title">Hitung Persegi</h3>
             <img src="./asset/persegi.jpg" alt="Persegi" width="70" class="img">
-            <p>Rumus Luas Persegi: <b>L = S x S</b></p>
-            <input type="number" id="sisi" placeholder="Nilai Sisi">
-            <button class="btn" onclick="hitungLuasPersegi()">Hitung</button>
+            <input type="number" id="sisi" placeholder="Nilai Sisi" required>
+
+            <!--memilih perhitungan-->
+            <h4>Pilih Perhitungan:</h4>
+            <input type="radio" name="pilihpersegi" value="luas" onclick="pilihPerhitungan('persegi', 'luas')"> Luas
+            <input type="radio" name="pilihpersegi" value="keliling" onclick="pilihPerhitungan('persegi', 'keliling')"> Keliling
+
+            <!--form untuk luas persegi-->
+            <div id="luas-persegi" class="hitung-box">
+                <h4>Luas Persegi</h4>
+                <p>Rumus: <b>L = S x S</b></p>
+                <button class="btn" onclick="hitungluaspersegi()">Hitung</button>
+                <p id="hasil-luas-persegi" class="hasil-box"></p>
+            </div>
+
+            <!--form untuk keliling persegi-->
+            <div id="keliling-persegi" class="hitung-box">
+                <h4>Keliling Persegi</h4>
+                <p>Rumus: <b>K = 4 x S</b></p>
+                <button class="btn" onclick="hitungkelilingpersegi()">Hitung</button>
+                <p id="hasil-keliling-persegi" class="hasil-box"></p>
+            </div>
+
             <button class="btn btn-reset" onclick="resetForm('persegi')">Reset</button>
-            <p id="hasil-luas-persegi"></p>
         </div>
 
+        <!--form persegi panjang-->
         <div id="form-persegipanjang" class="form-container" style="display: none;">
-            <h3 class="title">Luas Persegi Panjang</h3>
-            <img src="./asset/persegipanjang.jpg" alt="Persegi Panjang" width="70" class="img">
-            <p>Rumus Luas Persegi Panjang: <b>L = P x L</b></p>
+            <h3 class="title">Hitung Persegi Panjang</h3>
+            <img src="./asset/persegipanjang.jpg" alt="Persegi Panjang" width="110" class="img">
             <input type="number" id="panjang" placeholder="Nilai Panjang">
             <input type="number" id="lebar" placeholder="Nilai Lebar">
-            <button class="btn" onclick="hitungLuasPersegiPanjang()">Hitung</button>
+
+            <!--memilih perhitungan-->
+            <h4>Pilih Perhitungan:</h4>
+            <input type="radio" name="pilihpersegipanjang" value="luas" onclick="pilihPerhitungan('persegipanjang', 'luas')"> Luas
+            <input type="radio" name="pilihpersegipanjang" value="keliling" onclick="pilihPerhitungan('persegipanjang', 'keliling')"> Keliling
+
+            <!--form luas persegi-->
+            <div id="luas-persegipanjang" class="hitung-box">
+                <h4>Luas Persegi Panjang</h4>
+                <p>Rumus: <b>L = P × L</b></p>
+                <button class="btn" onclick="hitungLuasPersegiPanjang()">Hitung</button>
+                <p id="hasil-luas-persegi-panjang" class="hasil-box"></p>
+            </div>
+
+            <!--form keliling persegi-->
+            <div id="keliling-persegipanjang" class="hitung-box">
+                <h4>Keliling Persegi Panjang</h4>
+                <p>Rumus: <b>K = 2 × (P + L)</b></p>
+                <button class="btn" onclick="hitungKelilingPersegiPanjang()">Hitung</button>
+                <p id="hasil-keliling-persegipanjang" class="hasil-box"></p>
+            </div>
+
             <button class="btn btn-reset" onclick="resetForm('persegipanjang')">Reset</button>
-            <p id="hasil-luas-persegi-panjang"></p>
         </div>
     </div>
 </body>
